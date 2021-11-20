@@ -32,6 +32,8 @@ Body:
     "price" : 20
 }
 
+Price is between 0 and 1000.
+
 ### POST
 Link: https://localhost:5001/
 
@@ -42,7 +44,7 @@ Body:
     "price" : 20
 }
 
-Price is set to be between 0 and 1000.
+Price is between 0 and 1000.
 
 ### DELETE
 Link: https://localhost:5001/{id}
