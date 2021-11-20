@@ -12,7 +12,7 @@ This is a Rest-API-Server in C# with mongodb. You can create new database-entrie
 * [Postman](https://www.postman.com/downloads)
 
 ## Usage:
-Start the Server with ´´´F5´´´ in VS Code. Wait until the Terminal has finished. 
+Start the Server with ```F5``` in VS Code. Wait until the Terminal has finished. 
 
 You can find the Swagger-UI on https://localhost:5001/swagger/index.html .
 
