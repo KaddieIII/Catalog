@@ -1,5 +1,6 @@
 # Catalog
-Rest-API-Server in C# with mongodb.
+This is a Rest-API-Server in C# with mongodb. You can create new database-entries, called 'services' with attributes name, description and price.
+
 
 ## Requirements
 * [.NET 5 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)
@@ -7,5 +8,27 @@ Rest-API-Server in C# with mongodb.
     * Packages: C#, MongoDb
 * [Docker](https://docs.docker.com/get-docker)
 
-## Nice to have
+### Recommandation
 * [Postman](https://www.postman.com/downloads)
+
+## Usage:
+Start the Server with '''F5''' in VS Code. Wait until the Terminal has finished. 
+
+You can find the Swagger-UI on https://localhost:5001/services .
+
+For debugging and testing I recommend Postman. You can easily make GET, PUT, POST, DELETE requests and also fill the requested JSON data. Use the format:
+
+### GET
+
+### PUT
+
+### POST
+{
+    "name" : "This is the name",
+    "description" : This is a description",
+    "price" : 20
+}
+
+Price is set to be between 0 and 1000.
+
+### DELETE
