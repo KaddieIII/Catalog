@@ -5,4 +5,3 @@ Resources all from pixabay.com. They are free for commercial use.
 **2.)** Car sharing: [https://pixabay.com/photos/carsharing-rental-car-automobile-1436203/](https://pixabay.com/photos/carsharing-rental-car-automobile-1436203/)
 
 **3.)** Wedding party: [https://pixabay.com/photos/exclusive-banquet-adoption-1812772/](https://pixabay.com/photos/exclusive-banquet-adoption-1812772/)
-```
