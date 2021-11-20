@@ -25,24 +25,24 @@ optional: https://localhost:5001/{id}
 ### PUT
 Link: https://localhost:5001/{id}
 
-Body:
+```Body:
 {
     "name" : "This is the name",
     "description" : This is a description",
     "price" : 20
-}
+}```
 
 Price is between 0 and 1000.
 
 ### POST
 Link: https://localhost:5001/
 
-Body:
+```Body:
 {
     "name" : "This is the name",
     "description" : This is a description",
     "price" : 20
-}
+}```
 
 Price is between 0 and 1000.
 
