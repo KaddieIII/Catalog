@@ -14,15 +14,28 @@ This is a Rest-API-Server in C# with mongodb. You can create new database-entrie
 ## Usage:
 Start the Server with '''F5''' in VS Code. Wait until the Terminal has finished. 
 
-You can find the Swagger-UI on https://localhost:5001/services .
+You can find the Swagger-UI on https://localhost:5001/swagger/index.html .
 
-For debugging and testing I recommend Postman. You can easily make GET, PUT, POST, DELETE requests and also fill the requested JSON data. Use the format:
+For debugging and testing I recommend Postman. You can easily make GET, PUT, POST, DELETE requests and also fill the requested JSON data.
 
 ### GET
+Link: https://localhost:5001/
+optional: https://localhost:5001/{id}
 
 ### PUT
+Link: https://localhost:5001/{id}
+
+Body:
+{
+    "name" : "This is the name",
+    "description" : This is a description",
+    "price" : 20
+}
 
 ### POST
+Link: https://localhost:5001/
+
+Body:
 {
     "name" : "This is the name",
     "description" : This is a description",
@@ -32,3 +45,4 @@ For debugging and testing I recommend Postman. You can easily make GET, PUT, POS
 Price is set to be between 0 and 1000.
 
 ### DELETE
+Link: https://localhost:5001/{id}
