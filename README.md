@@ -30,7 +30,8 @@ Link: https://localhost:5001/{id}
     "name" : "This is the name",
     "description" : This is a description",
     "price" : 20
-}```
+}
+```
 
 Price is between 0 and 1000.
 
@@ -42,7 +43,8 @@ Link: https://localhost:5001/
     "name" : "This is the name",
     "description" : This is a description",
     "price" : 20
-}```
+}
+```
 
 Price is between 0 and 1000.
 
