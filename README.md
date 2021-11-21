@@ -5,7 +5,7 @@ This is a Rest-API-Server in C# with mongodb. You can create new database-entrie
 ## Requirements
 * [.NET 5 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)
 * [Visual Studio Code](https://code.visualstudio.com)
-    * Packages: C#, MongoDb (might not work with database running in docker)
+    * Packages: C#
 * [Docker](https://docs.docker.com/get-docker)
 
 ## Setup:
