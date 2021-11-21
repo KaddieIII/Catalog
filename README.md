@@ -19,7 +19,7 @@ You can find the Swagger-UI on https://localhost:5001/swagger/index.html .
 For debugging and testing I recommend Postman. You can easily make GET, PUT, POST, DELETE requests and also fill the requested JSON data.
 
 ### GET
-**1.)** ```https://localhost:5001/``` -> get all services
+**1.)** ```https://localhost:5001/``` -> get all services__
 **2.)** ```https://localhost:5001/{id}``` -> get the service with the given id
 **3.)** ```https://localhost:5001/{id}/image``` -> get the image of the service with the given id
 
