@@ -89,7 +89,7 @@ namespace Catalog.Controllers
         }
 
         // PUT /services/{id}
-        // needs additional parameters { "name" : "" , "description" : "" , "price" : }
+        // needs additional parameters { "name" : "name of the service" , "description" : "..." , "price" : , "picture" : "filename of the picture", "base64" : "base64 code of the image"}
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateItemAsync(Guid id, UpdateServiceDto serviceDto)
         {
@@ -120,7 +120,8 @@ namespace Catalog.Controllers
             return NoContent();
         }
 
-        // GET /services/{id}
+        // PUT /services/{id}/booking
+        // if the service is still available this function books the service
         [HttpPut("{id}/booking")]
         public async Task<ActionResult<ServiceDto>> BookingAsync(Guid id, UpdateServiceDto serviceDto)
         {
@@ -151,7 +152,8 @@ namespace Catalog.Controllers
             }
         }
 
-        // GET /services/{id}
+        // PUT /services/{id}/unbooking
+        // if the service is booked this function resets the service
         [HttpPut("{id}/unbooking")]
         public async Task<ActionResult<ServiceDto>> UnBookingAsync(Guid id, UpdateServiceDto serviceDto)
         {
