@@ -36,14 +36,6 @@ namespace Catalog.Repositories
             await servicesCollection.DeleteOneAsync(filter);
         }
 
-        /*
-        public async Task<Service> GetImageAsync(Guid id)
-        {
-            var filter = filterBuilder.Eq(service => service.Id, id);
-            return await servicesCollection.Find(filter).SingleOrDefaultAsync();
-        }
-        */
-
         // get /services/id
         // needs id as parameter
         public async Task<Service> GetServiceAsync(Guid id)
