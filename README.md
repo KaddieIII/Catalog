@@ -9,7 +9,7 @@ This is a Rest-API-Server in C# with mongodb. You can create new database-entrie
 * [Docker](https://docs.docker.com/get-docker)
 
 ## Setup:
-For **Docker**: 
+For **Docker**: <br />
 **1.)** ```docker run -d --rm --name mongo -p 27018:27017 -v mongodbdata:/data/db -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=P1a2s3s4w5o6r7d8 mongo```<br />
 **2.)** ```dotnet user-secrets init```<br />
 **3.)** ```dotnet user-secrets set MongoDbSettings:Password P1a2s3s4w5o6r7d8```<br />
