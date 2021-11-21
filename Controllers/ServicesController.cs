@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using System.Net.Http;
 
 namespace Catalog.Controllers
 {
@@ -72,10 +73,18 @@ namespace Catalog.Controllers
                 Name = serviceDto.Name,
                 Description = serviceDto.Description,
                 Price = serviceDto.Price,
+                Picture = serviceDto.Picture,
+                Base64 = serviceDto.Base64,
                 CreatedDate = DateTimeOffset.UtcNow
             };
 
             await repository.CreateServiceAsync(service);
+
+            string path = Directory.GetCurrentDirectory();
+            string picture = path + "\\Resources\\" + service.Picture;
+
+            System.IO.File.WriteAllBytes(@picture, Convert.FromBase64String(service.Base64));
+
             return CreatedAtAction(nameof(GetServiceAsync), new { id = service.Id }, service.AsDto());
         }
 
@@ -95,7 +104,8 @@ namespace Catalog.Controllers
                 Name = serviceDto.Name,
                 Description = serviceDto.Description,
                 Price = serviceDto.Price,
-                Picture = serviceDto.Picture
+                Picture = serviceDto.Picture,
+                Base64 = serviceDto.Base64
             };
 
             await repository.UpdateServiceAsync(updatedService);

@@ -8,5 +8,6 @@ namespace Catalog.Dtos
         [Required] public string Description { get; init; }
         [Required] [Range(0,1000)] public decimal Price { get; init; }
         [Required] public string Picture { get; init; }
+        [Required] public string Base64 { get; init; }
     }
 }

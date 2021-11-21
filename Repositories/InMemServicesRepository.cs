@@ -57,15 +57,5 @@ namespace Catalog.Repositories
             services.RemoveAt(index);
             await Task.CompletedTask;
         }
-
-        // get /services/{id}/image
-        // needs id as parameter
-        /*
-        public async Task<Service> GetImageAsync(Guid id)
-        {
-            var service = services.Where(item => item.Id == id).SingleOrDefault();
-            return await Task.FromResult(service);
-        }
-        */
     }
 }
