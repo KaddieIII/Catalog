@@ -12,6 +12,7 @@ namespace Catalog
                 Name = service.Name,
                 Description = service.Description,
                 Price = service.Price,
+                Picture = service.Picture,
                 CreatedDate = service.CreatedDate
             };
         }

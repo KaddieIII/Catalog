@@ -6,6 +6,8 @@ using Catalog.Repositories;
 using Catalog.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace Catalog.Controllers
 {
@@ -43,6 +45,23 @@ namespace Catalog.Controllers
             return service.AsDto();
         }
 
+        // GET /services/{id}/image
+        [HttpGet("{id}/image")]
+        public async Task<ActionResult<ServiceDto>> GetImageAsync(Guid id)
+        {
+            
+            var service = await repository.GetServiceAsync(id);
+
+            if (service is null)
+            {
+                return NotFound();
+            }
+
+            string path = Directory.GetCurrentDirectory();
+            string picture = path + "\\Resources\\" + service.Picture;
+            return PhysicalFile(@picture, "image/jpg");
+        }
+
         // POST /services
         // needs additional parameters { "name" : "" , "description" : "" , "price" : }
         [HttpPost]
@@ -75,7 +94,8 @@ namespace Catalog.Controllers
             Service updatedService = existingService with {
                 Name = serviceDto.Name,
                 Description = serviceDto.Description,
-                Price = serviceDto.Price
+                Price = serviceDto.Price,
+                Picture = serviceDto.Picture
             };
 
             await repository.UpdateServiceAsync(updatedService);
