@@ -110,6 +110,13 @@ namespace Catalog.Controllers
 
             await repository.UpdateServiceAsync(updatedService);
 
+            if (updatedService.Base64 != null){
+                string path = Directory.GetCurrentDirectory();
+                string picture = path + "\\Resources\\" + updatedService.Picture;
+
+                System.IO.File.WriteAllBytes(@picture, Convert.FromBase64String(updatedService.Base64));
+            }
+
             return NoContent();
         }
 
