@@ -11,5 +11,6 @@ namespace Catalog.Dtos
         public string Picture { get; init; }
         public string Base64 { get; init; }
         public DateTimeOffset CreatedDate { get; init; }
+        public bool Booked = false;
     }
 }

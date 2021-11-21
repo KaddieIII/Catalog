@@ -28,7 +28,7 @@ For debugging and testing I recommend Swagger UI. You can easily make GET, PUT, 
 **3.)** https://localhost:5001/{id}/image -> get the image of the service with the given id
 
 ### PUT
-Link: https://localhost:5001/{id}
+**1.)** https://localhost:5001/{id}
 
 ```
 Body:
@@ -41,7 +41,11 @@ Body:
 }
 ```
 
-Price is between 0 and 1000.
+Price is between 0 and 1000.<br />
+<br />
+
+**2.)** https://localhost:5001/{id}/booking -> If service is available, book it. <br />
+**3.)** https://localhost:5001/{id}/unbooking -> If service is booked, reset it.
 
 ### POST
 Link: https://localhost:5001/

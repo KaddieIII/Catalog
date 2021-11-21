@@ -120,6 +120,68 @@ namespace Catalog.Controllers
             return NoContent();
         }
 
+        // GET /services/{id}
+        [HttpPut("{id}/booking")]
+        public async Task<ActionResult<ServiceDto>> BookingAsync(Guid id, UpdateServiceDto serviceDto)
+        {
+            var existingService = await repository.GetServiceAsync(id);
+
+            if (existingService is null)
+            {
+                return NotFound();
+            }
+
+            if (existingService.Booked == true)
+            {
+                return Content("Service not available!");
+            } 
+            else 
+            {
+                Service updatedService = existingService with {
+                    Name = serviceDto.Name,
+                    Description = serviceDto.Description,
+                    Price = serviceDto.Price,
+                    Picture = serviceDto.Picture,
+                    Base64 = serviceDto.Base64,
+                    Booked = true
+                };
+
+                await repository.UpdateServiceAsync(updatedService);
+                return Content("Service booked!");
+            }
+        }
+
+        // GET /services/{id}
+        [HttpPut("{id}/unbooking")]
+        public async Task<ActionResult<ServiceDto>> UnBookingAsync(Guid id, UpdateServiceDto serviceDto)
+        {
+            var existingService = await repository.GetServiceAsync(id);
+
+            if (existingService is null)
+            {
+                return NotFound();
+            }
+
+            if (existingService.Booked == false)
+            {
+                return Content("Service was not booked!");
+            } 
+            else 
+            {
+                Service updatedService = existingService with {
+                    Name = serviceDto.Name,
+                    Description = serviceDto.Description,
+                    Price = serviceDto.Price,
+                    Picture = serviceDto.Picture,
+                    Base64 = serviceDto.Base64,
+                    Booked = false
+                };
+
+                await repository.UpdateServiceAsync(updatedService);
+                return Content("Service unbooked!");
+            }
+        }
+
         // DELETE /service/{id}
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteServiceAsync(Guid id) {
