@@ -12,9 +12,9 @@ namespace Catalog.Repositories
         // just a few default services
         private readonly List<Service> services = new()
         {
-            new Service { Id = Guid.NewGuid(), Name = "Hochzeitsfeier", Description = "", Price = 250, CreatedDate = DateTimeOffset.UtcNow },
-            new Service { Id = Guid.NewGuid(), Name = "Bike Sharing", Description = "", Price = 2, CreatedDate = DateTimeOffset.UtcNow },
-            new Service { Id = Guid.NewGuid(), Name = "Rent a car", Description = "", Price = 10, CreatedDate = DateTimeOffset.UtcNow },
+            new Service { Id = Guid.NewGuid(), Name = "Hochzeitsfeier", Description = "", Price = 250, Picture = "..\\Resources\\wedding_party.jpg" , CreatedDate = DateTimeOffset.UtcNow },
+            new Service { Id = Guid.NewGuid(), Name = "Bike Sharing", Description = "", Price = 2, Picture = "..\\Resources\\bike_sharing.jpg"  , CreatedDate = DateTimeOffset.UtcNow },
+            new Service { Id = Guid.NewGuid(), Name = "Rent a car", Description = "", Price = 10, Picture = "..\\Resources\\car_sharing.jpg"  , CreatedDate = DateTimeOffset.UtcNow },
         };
 
         // get /services
@@ -57,5 +57,15 @@ namespace Catalog.Repositories
             services.RemoveAt(index);
             await Task.CompletedTask;
         }
+
+        // get /services/{id}/image
+        // needs id as parameter
+        /*
+        public async Task<Service> GetImageAsync(Guid id)
+        {
+            var service = services.Where(item => item.Id == id).SingleOrDefault();
+            return await Task.FromResult(service);
+        }
+        */
     }
 }
