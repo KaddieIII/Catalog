@@ -42,7 +42,6 @@ Body:
 ```
 
 Price is between 0 and 1000.<br />
-<br />
 
 **2.)** https://localhost:5001/{id}/booking -> If service is available, book it. <br />
 **3.)** https://localhost:5001/{id}/unbooking -> If service is booked, reset it.
