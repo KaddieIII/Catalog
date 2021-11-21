@@ -130,6 +130,11 @@ namespace Catalog.Controllers
                 return NotFound();
             }
 
+            string path = Directory.GetCurrentDirectory();
+            string picture = path + "\\Resources\\" + existingService.Picture;
+
+            System.IO.File.Delete(@picture);
+
             await repository.DeleteServiceAsync(id);
 
             return NoContent();
